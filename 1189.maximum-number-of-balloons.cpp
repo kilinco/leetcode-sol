@@ -13,14 +13,20 @@ public:
            }
        }
        // find balloons
-       while(bmap['b'] > 0 && bmap['a'] > 0 && bmap['l'] > 1 && bmap['n'] > 0 && bmap['o'] > 1){
+       out = (bmap['b'] < bmap['l']/2)? bmap['b']: bmap['l']/2;
+       out = (out > bmap['o']/2)? bmap['o']/2: out;
+       out = (out > bmap['n']) ? bmap['n']: out;
+       out = (out > bmap['a']) ? bmap['a']: out;
+       
+       // find balloons
+      /* while(bmap['b'] > 0 && bmap['a'] > 0 && bmap['l'] > 1 && bmap['n'] > 0 && bmap['o'] > 1){
             out++;
             bmap['b']--;
             bmap['a']--;
             bmap['l'] -= 2;
             bmap['o'] -= 2;
             bmap['n']--;
-       }
+       }*/
        return out; 
     }
 };
