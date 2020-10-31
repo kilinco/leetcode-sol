@@ -12,8 +12,7 @@ public:
         if(!head) return false;
         // runner-up method
         ListNode *ts = head, *tf = head;
-        while(tf) { 
-            if (!(tf->next)) return false;
+        while(tf && tf->next) { 
             tf = tf->next->next;
             ts = ts->next;
             if (tf == ts) return true;
