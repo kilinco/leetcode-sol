@@ -9,11 +9,11 @@
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
-        if(head == NULL) return false;
+        if(!head) return false;
         // runner-up method
         ListNode *ts = head, *tf = head;
-        while(tf != NULL) { 
-            if (tf->next  == NULL) return false;
+        while(tf) { 
+            if (!(tf->next)) return false;
             tf = tf->next->next;
             ts = ts->next;
             if (tf == ts) return true;
